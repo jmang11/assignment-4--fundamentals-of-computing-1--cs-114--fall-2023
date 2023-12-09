@@ -1,7 +1,18 @@
 void keyPressed(){
 // keyCode -- key 0 == 48 ; key 8 == 56 ------ for keyCode
-//User input
-
+//U input
+  
+  if (int(key) < 48){
+    if (int(key) == 0){
+    }
+    else{
+    println("This is not a valid option, please select a number between 0-8.");
+    }
+  }
+  else if (int(key) > 56){
+    println("This is not a valid option, please select a number between 0-8.");
+  }
+  
   if (int(key) == 48){
     if(slot_1 == true){
       X(0, 0, oneThird, oneThird);
@@ -10,9 +21,14 @@ void keyPressed(){
       computer_turn = true;
       user_turn = false;
       key = 0;
+      slot_1_U_captivity = true;
+      keyPressed = true;
+      delay(200);
     }
-    else{
+    else if (slot_1 == false){
       println("This slot is already taken, please select an open slot");
+      key = 0;
+      delay(200);
     }
   }
   else if(int(key) == 49){
@@ -23,9 +39,14 @@ void keyPressed(){
       computer_turn = true;
       user_turn = false;
       key = 0;
+      slot_2_U_captivity = true;
+      keyPressed = true;
+      delay(200);
   }
   else{
     println("This slot is already taken, please select an open slot");
+    key = 0;
+    delay(200);
   }
   }
   else if(int(key) == 50){
@@ -36,9 +57,14 @@ void keyPressed(){
       computer_turn = true;
       user_turn = false;
       key = 0;
+      slot_3_U_captivity = true;
+      keyPressed = true;
+      delay(200);
     }
     else{
       println("This slot is already taken, please select an open slot");
+      key = 0;
+      delay(200);
     }
   }
   else if(int(key) == 51){
@@ -49,9 +75,14 @@ void keyPressed(){
       computer_turn = true;
       user_turn = false;
       key = 0;
+      slot_4_U_captivity = true;
+      keyPressed = true;
+      delay(200);
     }
     else{
       println("This slot is already taken, please select an open slot");
+      key = 0;
+      delay(200);
     }
   }
   else if(int(key) == 52){
@@ -62,6 +93,9 @@ void keyPressed(){
       computer_turn = true;
       user_turn = false;
       key = 0;
+      slot_5_U_captivity = true;
+      keyPressed = true;
+      delay(200);
     }
     else{
       println("This slot is already taken, please select an open slot");
@@ -75,9 +109,14 @@ void keyPressed(){
       computer_turn = true;
       user_turn = false;
       key = 0;
+      slot_6_U_captivity = true;
+      keyPressed = true;
+      delay(200);
     }
     else{
       println("This slot is already taken, please select an open slot");
+      key = 0;
+      delay(200);
     }
   }
   else if(int(key) == 54){
@@ -88,9 +127,14 @@ void keyPressed(){
       computer_turn = true;
       user_turn = false;
       key = 0;
+      slot_7_U_captivity = true;
+      keyPressed = true;
+      delay(200);
     }
     else{
       println("This slot is already taken, please select an open slot");
+      key = 0;
+      delay(200);
     }
   }
   else if(int(key) == 55){
@@ -101,9 +145,14 @@ void keyPressed(){
       computer_turn = true;
       user_turn = false;
       key = 0;
+      slot_8_U_captivity = true;
+      keyPressed = true;
+      delay(200);
     }
     else{
       println("This slot is already taken, please select an open slot");
+      key = 0;
+      delay(200);
     }
   }
   else if(int(key) == 56){
@@ -114,25 +163,29 @@ void keyPressed(){
       computer_turn = true;
       user_turn = false;
       key = 0;
+      slot_9_U_captivity = true;
+      keyPressed = true;
+      delay(200);
     }
     else{
       println("This slot is already taken, please select an open slot");
+      key = 0;
+      delay(200);
     }
   }
   else{
-    keyPressed();
   }
   }
-  
+
 void computer_play(){
   int computer_gen = int(random(0,9));
-  println(computer_gen);
   if(computer_gen == 0){
     if(slot_1 == true){
       Circle(oneSixth, oneSixth, oneThird);
       slot_1 = false;
       computer_turn = false;
       user_turn = true;
+      slot_1_C_captivity = true;
     }
     else{
    
@@ -144,6 +197,7 @@ void computer_play(){
       slot_2 = false;
       computer_turn = false;
       user_turn = true;
+      slot_2_C_captivity = true;
     }
     else{}
   }
@@ -153,6 +207,7 @@ void computer_play(){
       slot_3 = false;
       computer_turn = false;
       user_turn = true;
+      slot_3_C_captivity = true;
     }
     else{
     
@@ -164,6 +219,7 @@ void computer_play(){
       slot_4 = false;
       computer_turn = false;
       user_turn = true;
+      slot_4_C_captivity = true;
     }
     else{
       
@@ -175,6 +231,7 @@ void computer_play(){
       slot_5 = false;
       computer_turn = false;
       user_turn = true;
+      slot_5_C_captivity = true;
     }
     else{
     
@@ -186,6 +243,7 @@ void computer_play(){
       slot_6 = false;
       computer_turn = false;
       user_turn = true;
+      slot_6_C_captivity = true;
     }
     else{
     
@@ -197,6 +255,7 @@ void computer_play(){
       slot_7 = false;
       computer_turn = false;
       user_turn = true;
+      slot_7_C_captivity = true;
     }
     else{
       
@@ -208,6 +267,7 @@ void computer_play(){
       slot_8 = false;
       computer_turn = false;
       user_turn = true;
+      slot_8_C_captivity = true;
     }
     else{}
   }
@@ -217,11 +277,113 @@ void computer_play(){
       slot_9 = false;
       computer_turn = false;
       user_turn = true;
+      slot_9_C_captivity = true;
     }
     else{
   }
   }
   else{
     computer_play();
+  }
+}
+
+void test_computer_win(){
+  if(slot_1_C_captivity == true & slot_2_C_captivity == true & slot_3_C_captivity == true){
+    gameover = true;
+    println("Game Over! Computer Wins!");
+    stop();
+  }
+  else if(slot_4_C_captivity == true & slot_5_C_captivity == true & slot_6_C_captivity == true){
+    gameover = true;
+    println("Game Over! Computer Wins!");
+    stop();
+  }
+  else if(slot_7_C_captivity == true & slot_8_C_captivity == true & slot_9_C_captivity == true){
+    gameover = true;
+    println("Game Over! Computer Wins!");
+    stop();
+  }
+  else if(slot_1_C_captivity == true & slot_4_C_captivity == true & slot_7_C_captivity == true){
+    gameover = true;
+    println("Game Over! Computer Wins!");
+    stop();
+  }
+  else if(slot_2_C_captivity == true & slot_5_C_captivity == true & slot_8_C_captivity == true){
+    gameover = true;
+    println("Game Over! Computer Wins!");
+    stop();
+  }
+  else if(slot_3_C_captivity == true & slot_6_C_captivity == true & slot_9_C_captivity == true){
+    gameover = true;
+    println("Game Over! Computer Wins!");
+    stop();
+  }
+  else if(slot_1_C_captivity == true & slot_5_C_captivity == true & slot_9_C_captivity == true){
+    gameover = true;
+    println("Game Over! Computer Wins!");
+    stop();
+  }
+  else if(slot_3_C_captivity == true & slot_5_C_captivity == true & slot_7_C_captivity == true){
+    gameover = true;
+    println("Game Over! Computer Wins!");
+    stop();
+  }
+  else{
+  }
+}
+
+void test_user_win(){
+  if(slot_1_U_captivity == true & slot_2_U_captivity == true & slot_3_U_captivity == true){
+    gameover = true;
+    println("Game Over! You Win!");
+    stop();
+  }
+  else if(slot_4_U_captivity == true & slot_5_U_captivity == true & slot_6_U_captivity == true){
+    gameover = true;
+    println("Game Over! You Win!");
+    stop();
+  }
+  else if(slot_7_U_captivity == true & slot_8_U_captivity == true & slot_9_U_captivity == true){
+    gameover = true;
+    println("Game Over! You Win!");
+    stop();
+  }
+  else if(slot_1_U_captivity == true & slot_4_U_captivity == true & slot_7_U_captivity == true){
+    gameover = true;
+    println("Game Over! You Win!");
+    stop();
+  }
+  else if(slot_2_U_captivity == true & slot_5_U_captivity == true & slot_8_U_captivity == true){
+    gameover = true;
+    println("Game Over! You Win!");
+    stop();
+  }
+  else if(slot_3_U_captivity == true & slot_6_U_captivity == true & slot_9_U_captivity == true){
+    gameover = true;
+    println("Game Over! You Win!");
+    stop();
+  }
+  else if(slot_1_U_captivity == true & slot_5_U_captivity == true & slot_9_U_captivity == true){
+    gameover = true;
+    println("Game Over! You Win!");
+    stop();
+  }
+  else if(slot_3_U_captivity == true & slot_5_U_captivity == true & slot_7_U_captivity == true){
+    gameover = true;
+    println("Game Over! You Win!");
+    stop();
+  }
+  else{
+  }
+}
+
+void test_for_tie(){
+  if (slot_1 == false & slot_2 == false & slot_3 == false & slot_4 == false & slot_5 == false &
+      slot_6 == false & slot_7 == false & slot_8 == false & slot_9 == false){
+    delay(200);
+    println("Game Over, the result is a tie.");
+    stop();
+  }
+  else{
   }
 }

@@ -4,14 +4,24 @@ void setup() {
 }
 
 void draw() {
-  if(user_turn == false){
-    computer_play();
-    println(computer_turn, " ", user_turn);
-  }
-  else if(computer_turn == false && key > 0){
-      keyPressed();
-      println(computer_turn, " ", user_turn);
-    }
-    else{
-    }
+   while(!user_turn){
+     computer_play();
+     test_computer_win();
+     break;
+   }
+   while(!computer_turn){
+     if(int(key) == 0){
+       keyPressed();
+       test_user_win();
+       key = 0;
+       break;
+     }
+     else{
+       key = 0;
+     }
+   while(!gameover){
+     println("The game is still in play!");
+     break;
+   }
+   }
   }
